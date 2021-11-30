@@ -116,14 +116,14 @@
     </div>
     <script src="countdown.js"></script>
     <script>
-        let timeout_vw;
+        let timeout_vh;
         let $wrap = document.querySelector(".wrap");
         const setFillHeight = () => {
             $wrap.style.height = window.innerHeight + 'px';
         }
         window.addEventListener('resize', () => {
-            clearTimeout(timeout_vw);
-            timeout_vw =  setTimeout(setFillHeight, 500);
+            clearTimeout(timeout_vh);
+            timeout_vh =  setTimeout(setFillHeight, 500);
         });
     </script>
 </body>
