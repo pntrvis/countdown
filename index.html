@@ -117,13 +117,13 @@
     <script src="countdown.js"></script>
     <script>
         let timeout_vw;
+        let $wrap = document.querySelector(".wrap");
         const setFillHeight = () => {
-            const vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
+            $wrap.style.height = window.innerHeight + 'px';
         }
         window.addEventListener('resize', () => {
             clearTimeout(timeout_vw);
-            timeout_vw =  setTimeout(setFillHeight, 400);
+            timeout_vw =  setTimeout(setFillHeight, 500);
         });
     </script>
 </body>
