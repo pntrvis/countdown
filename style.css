@@ -59,7 +59,8 @@ a:hover {
     --safe-top: calc(env(safe-area-inset-bottom));
     --safe-bottom: calc(env(safe-area-inset-bottom));
     --safe-left: calc(env(safe-area-inset-right));
-     --safe-right: calc(env(safe-area-inset-left));
+    --safe-right: calc(env(safe-area-inset-left));
+    transition: height .2s ease-in-out;
 }
 
 #background {
