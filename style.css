@@ -56,6 +56,10 @@ a:hover {
     position: fixed;
     top: 0;
     left: 0;
+    --safe-top: calc(env(safe-area-inset-bottom));
+    --safe-bottom: calc(env(safe-area-inset-bottom));
+    --safe-left: calc(env(safe-area-inset-right));
+     --safe-right: calc(env(safe-area-inset-left));
 }
 
 #background {
