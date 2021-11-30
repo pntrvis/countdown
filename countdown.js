@@ -99,7 +99,7 @@ function setCountdown() {
 }
 setInterval('setCountdown()', 500);
 
-// Do this for 30 seconds
+// Do this for 0 seconds
 function timeOutConfetti() {
   const duration = 10 * 1000;
   const animationEnd = Date.now() + duration;
