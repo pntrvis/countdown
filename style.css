@@ -1,0 +1,386 @@
+@font-face {
+    font-family: 'Quicksand';
+    src: url(font/Quicksand-VariableFont_wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f8fafb;
+    background: linear-gradient(to bottom, #f8fafb, #dff1ff);
+    color: #4d4d4d;
+    overflow: hidden;
+    line-height: 1;
+    text-align: justify;
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        font-size: .7em;
+    }
+    .header {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (min-width: 701px) and (max-width: 1280px) {
+    body {
+        font-size: .9em;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    body {
+        font-size: 1.2em;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: #5e696b;
+}
+a:hover {
+    color: #248ca3;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#background {
+    display: none;
+}
+
+#background .color {
+    position: absolute;
+    filter: blur(150px);
+}
+
+#background .color:nth-child(1) {
+    top: -350px;
+    width: 600px;
+    height: 600px;
+    background: #ff359b;
+}
+
+#background .color:nth-child(2) {
+    bottom: -150px;
+    left: 100px;
+    width: 500px;
+    height: 500px;
+    background: #fffd87;
+}
+
+#background .color:nth-child(3) {
+    bottom: 50px;
+    right: 100px;
+    width: 300px;
+    height: 300px;
+    background: #00d2ff;
+}
+
+#background .text {
+    position: absolute;
+    z-index: 900;
+    top: 7em;
+    left: 50%;
+    width: 60vw;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+
+#background svg path {
+    stroke: #e4e4e480;
+    fill-opacity: .8;
+    animation: animate 3s cubic-bezier(0, 0.23, 1, .1);
+    fill: url(#lgrad-gold);
+    filter: drop-shadow(3px 2px 5px rgb(169, 152, 107)) blur(.2px);
+}
+
+/* #background {
+    display: none;
+} */
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        fill: transparent;
+        stroke-dasharray: 0;
+        filter: none blur(2px);
+    }
+
+    40% {
+        fill: transparent;
+        stroke: rgb(137, 108, 15);
+    }
+
+    85% {
+        fill: rgba(0, 0, 0, 0);
+        stroke: #8e8c8c;
+        stroke-opacity: 1;
+        stroke-dasharray: 507;
+    }
+
+    100% {
+        fill-opacity: .8;
+        stroke-dasharray: 0;
+        stroke: rgb(112, 152, 144);
+    }
+}
+
+.header {
+    position: absolute;
+    top: .5em;
+    left: .5em;
+}
+
+.title {
+    padding: 2px;
+    font-size: 1.48em;
+    font-weight: bold;
+}
+
+#countYear {
+    font-size: 1.3em;
+    letter-spacing: .4pt;
+    text-align: center;
+}
+
+.main {
+    margin: auto;
+    position: relative;
+}
+
+.set-container {
+    position: relative;
+}
+
+.counter-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #f8fafb80;
+    border-radius: 3px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 90px 100px -100px #000, 0 2px 30px rgb(0 0 0 / 20%);
+    border: 0.8px solid rgba(255, 255, 255, 0.5);
+    border-right: 0.8px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 0.8px solid rgba(255, 255, 255, 0.2);
+}
+
+.counter-container div {
+    padding: 1.3em 1.5em;
+    margin: 0.5em 0;
+}
+
+.counter-container div:not(:last-child) {
+    border-right: 0.8px solid #d5d5d5;
+}
+
+.counter-container div p {
+    font-size: 4em;
+    text-align: center;
+}
+
+.counter-container div p:last-child {
+    font-size: 0.7em;
+    font-weight: 100;
+    margin-top: .5em;
+    text-transform: uppercase;
+}
+
+.counter-container span, .curtTime-container span {
+    display: inline-block;
+    width: .50em;
+    margin: 0 .035em;
+}
+
+#countEnd {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    font-weight: 900;
+    backdrop-filter: blur(7px);
+    display: none;
+}
+
+@media screen and (max-height: 450px) {
+    #background .text {
+        top: 20vh;
+    }
+}
+
+#countEnd div {
+    height: 100%;
+    font-size: 1em;
+    width: 25%;
+    filter: none;
+    border: none;
+}
+
+.curtTime-container span {
+    margin-right: .1em;
+}
+
+.curtTime-container {
+    float: right;
+    margin: .13em .15em 0 0;
+    font-size: 0.85em;
+    letter-spacing: .5pt;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+#progressBar {
+    position: relative;
+    width: 0%;
+    background-color: #e4e4e4;
+    height: 2.6em;
+    transition: all .6s linear;
+}
+
+#progressBar p {
+    width: 100vw;
+    text-align: right;
+    padding-right: .2em;
+    font-size: 2.6em;
+    font-weight: 900;
+    letter-spacing: 1.5pt;
+}
+
+#progressBar .small {
+    font-size: .7em;
+}
+
+#progressBar span:not([class]) {
+    display: inline-block;
+    width: .50em;
+    margin: 0 .04em;
+}
+
+.credit {
+    position: absolute;
+    bottom: .2em;
+    left: .5em;
+}
+
+@media screen and (min-height: 451px) and (max-width: 450px) {
+    .counter-container {
+        flex-direction: column;
+    }
+    .counter-container div {
+        padding: 1.5em 1.3em;
+        margin: 0 .5em;
+    }
+    .counter-container div:not(:last-child) {
+        border-bottom: 0.8px solid #d5d5d5;
+        border-right: none;
+    }
+    .curtTime-container {
+        width: 100%;
+        text-align: center;
+        margin: .3em 0 0 0;
+    }
+    #countEnd div {
+        height: 100%;
+        font-size: 1em;
+        width: auto;
+    }
+}
+
+@media screen and (max-height: 500px) and (max-width: 400px) {
+    body {
+        font-size: .38em;
+    }
+    .header {
+        font-size: .1em;
+    }
+    .curtTime-container span {
+        display: inline-block;
+        width: 1em;
+        margin: 0 .035em;
+    }
+}
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #222222;
+        color: #eee;
+    }
+    a {
+        color: #a2afb2;
+    }
+    a:hover {
+        color: #a7dfec;
+    }
+    #background .color {
+        opacity: .5;
+    }
+    .counter-container {
+        background-color: #22222280;
+        box-shadow: 0 90px 100px -100px #546465, 0 1px 30px rgb(141 158 159 / 20%);
+        border: 0.8px solid rgba(66, 66, 66, 0.5);
+        border-right: 0.8px solid rgba(66, 66, 66, 0.2);
+        border-bottom: 0.8px solid rgba(66, 66, 66, 0.2);
+    }
+    .counter-container div:not(:last-child) {
+        border-right: 0.8px solid #535758;
+    }
+    #progressBar {
+        background-color: #394344;
+    }
+
+    @media screen and (min-height: 451px) and (max-width: 450px) {
+        .counter-container div:not(:last-child) {
+            border-bottom: 0.8px solid #535758;
+            border-right: none;
+        }
+    }
+
+    @keyframes animate {
+        0% {
+            opacity: 0;
+            fill: transparent;
+            stroke-dasharray: 0;
+            filter: none blur(2px);
+        }
+    
+        40% {
+            fill: transparent;
+            stroke: rgb(241, 188, 138);
+        }
+    
+        85% {
+            fill: rgba(255, 255, 255, 0);
+            stroke: #e4e4e4;
+            stroke-opacity: 1;
+            stroke-dasharray: 507;
+        }
+    
+        100% {
+            fill-opacity: .8;
+            stroke-dasharray: 0;
+            stroke: rgb(132, 224, 205);
+        }
+    }
+}
