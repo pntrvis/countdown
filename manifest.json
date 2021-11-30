@@ -1,0 +1,19 @@
+{
+    "lang": "ja-JP",
+    "name": "Countdown - P_7d2",
+    "short_name": "Countdown",
+    "description": "今年の残り日数と時間を表示します。",
+    "orientation": "any",
+    "display": "standalone",
+    "theme_color": "#00988a",
+    "background_color": "#ffffff",
+    "scope": "/countdown/index.html",
+    "start_url": "index.html",
+    "icons": [
+        {
+            "src": "img/icon.png",
+            "sizes": "267x267",
+            "type": "image/png"
+        }
+    ]
+}
