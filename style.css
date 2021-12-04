@@ -55,7 +55,7 @@ a:hover {
     min-height: 100vh;
     min-height: calc(var(--vh, 1vh) * 100);
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
     --safe-top: calc(env(safe-area-inset-bottom));
     --safe-bottom: calc(env(safe-area-inset-bottom));
