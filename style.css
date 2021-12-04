@@ -57,6 +57,7 @@ a:hover {
     position: fixed;
     bottom: 0;
     left: 0;
+    overflow: hidden;
     --safe-top: calc(env(safe-area-inset-bottom));
     --safe-bottom: calc(env(safe-area-inset-bottom));
     --safe-left: calc(env(safe-area-inset-right));
@@ -254,6 +255,7 @@ a:hover {
     bottom: 0;
     left: 0;
     width: 100%;
+    z-index: 1000;
 }
 
 #progressBar {
